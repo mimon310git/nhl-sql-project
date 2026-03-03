@@ -1,53 +1,25 @@
-# NHL SQL Practice Project (PostgreSQL + Docker)
+# NHL SQL Practice Project
 
-This is a hands-on SQL practice project focused on strengthening relational database fundamentals using a simplified NHL data model.
+Simple SQL practice project built with PostgreSQL and Docker.
 
-The goal of this project is learning and practicing SQL concepts in a structured and realistic environment, not building a production system.
-
----
-
-## Project Purpose
-
-This project was created as a personal SQL training exercise to:
-
-- Practice relational database design
-- Improve JOIN and aggregation skills
-- Work with foreign keys and constraints
-- Write analytical queries
-- Practice data validation queries with a QA mindset
-- Work with PostgreSQL in a Docker environment
-
----
+This project is focused on learning SQL basics on a small NHL-themed database. It is a training project for practicing queries, joins, aggregations, and simple data checks.
 
 ## Tech Stack
 
 - PostgreSQL 16
 - Docker Compose
 - DBeaver
-- SQL (DDL + DML)
+- SQL
 
----
+## Database Tables
 
-## Database Model
-
-The database models simplified NHL-related data with 5 tables:
+The project uses 5 tables:
 
 - `teams`
 - `players`
 - `games`
 - `goals`
 - `penalties`
-
-Concepts used:
-
-- Primary keys
-- Foreign keys
-- `CHECK` constraints
-- `NOT NULL` constraints
-- Multi-table relationships
-- Data integrity rules
-
----
 
 ## Project Structure
 
@@ -61,21 +33,29 @@ nhl-sql-project/
     +-- 03_queries.sql
 ```
 
----
+## What Is Inside
+
+- `01_schema.sql` creates the database tables
+- `02_seed.sql` inserts sample NHL data
+- `03_queries.sql` contains 17 practice queries
+
+The queries cover:
+
+- basic `SELECT`
+- `JOIN`
+- `GROUP BY`
+- simple game statistics
+- simple QA-style data validation checks
 
 ## How to Run
 
-### 1. Start the database
+Start the database:
 
 ```bash
 docker compose up -d
 ```
 
-This loads the schema and seed data automatically from the `sql/` directory.
-
-### 2. Connect via DBeaver
-
-Use these connection settings:
+Then connect in DBeaver with:
 
 - Host: `localhost`
 - Port: `5432`
@@ -83,72 +63,17 @@ Use these connection settings:
 - Username: `nhl`
 - Password: `nhl`
 
-### 3. Run practice queries
+After that, open `sql/03_queries.sql` and run the queries.
 
-Open `sql/03_queries.sql` and execute queries in DBeaver.
+## Purpose
 
----
+This project was made for SQL practice, mainly to improve:
 
-## Query Practice Includes
+- table relationships understanding
+- joins
+- aggregation queries
+- basic database validation thinking
 
-The project contains 30 example queries covering:
+## Note
 
-### Basic SQL
-
-- `SELECT`
-- `WHERE`
-- `ORDER BY`
-
-### Joins
-
-- `INNER JOIN`
-- `LEFT JOIN`
-- Multi-table joins
-
-### Aggregations
-
-- `COUNT`
-- `SUM`
-- `GROUP BY`
-- `HAVING`
-
-### CTE
-
-- Common Table Expressions
-
-### Statistics Examples
-
-- Goals per player
-- Goals per team
-- Penalty minutes per player
-- Game results
-
-### Data Validation Checks
-
-- Detect invalid relationships
-- Check inconsistent scores
-- Validate constraints
-- Detect duplicates
-
----
-
-## What I Practiced
-
-- Writing clean SQL queries
-- Understanding JOIN behavior
-- Handling `NULL` values
-- Designing a relational schema
-- Working with Dockerized PostgreSQL
-- Applying a QA-style data validation mindset
-
----
-
-## Notes
-
-This is a learning-focused project created to strengthen SQL fundamentals and database understanding.
-
-It is intentionally simple and structured for practice purposes.
-
----
-
-Continuous improvement project as part of ongoing SQL skill development.
+This is a learning project, not a production system.
