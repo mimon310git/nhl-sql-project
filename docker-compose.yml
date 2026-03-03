@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16
+    container_name: nhl_postgres
+    environment:
+      POSTGRES_USER: nhl
+      POSTGRES_PASSWORD: nhl
+      POSTGRES_DB: nhl_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
